@@ -25,30 +25,47 @@ h2 {
   font-size: 1em;
 }
 
+h3 {
+  text-align: center;
+  border-bottom: 1px solid #57b1dc;
+  margin-top: 30px;
+}
+
  </style>
 </head>
 
 <body>
 <h1><img src="DARKSOULS3.png" alt="Dark Souls III"><br>Dark Souls III</h1>
-
-<h2>The Game</h2>
+<div class="The Game">
+<h2 style="color:green;">The Game</h2>
 <p>Dark Souls is a game that is set in the third person perspective and players 
 are given a variety of weapons to fight against the enemies. There are also 
-bonfires which serve as check points where the player cn save the game and 
-refil their health.</p>
+bonfires which serve as <mark>check points</mark> where the player can save the game and 
+<em>refill their health.</em> Although you always <var>seem</var> to <sup>die</sup> and it's really frustrating.
+<del>This game is really fun. </del></p>
+</div>
 
-<h2>Plot</h2>
-<p>It is set in the Kindom of Lorthic and a bell has rung to signal that the 
+<div class="Plot">
+<h2 style="color:red;">Plot</h2>
+<p>It is set in the Kindom of Lorthic and a <small>bell</small> has rung to signal that the 
 first flame is dying out. The bell is the last hope for the age of fire and
-the lords of cinder (the ones who are supposed to keep the fire going) abandon
-their thrones. Then enters the main character (you) and your job is to return
-all of the lords back to their thrones. The only way to get them to come back
+the lords of cinder <i>the ones who are supposed to keep the fire going</i> abandon
+their thrones. Then enters the main character <strong>(you)</strong> and your job is to return
+all of the <sub>lords</sub> back to their thrones. The only way to get them to come back
 is defeaing them in battle.</p>
+</div>
 
-<h2>Sales</h2>
+<div class="Sales">
+<h2 style=color:blue;">Sales</h2>
 <p>In Japan it <b>sold over 200,000 copies</b> in its first two weeks of rlease. Then 300
 million copies were distributed among the world and it was the best selling video
-game in the US in a month of the release.</p>
+game in the US in a <ins>month of the release</ins>.</p>
+</div>
+<h3><img src="you-died.jpg" alt="You Died" style="width:1200px;height:220px;"></h3>
+<address>
+Written by Brendin Schumacher<br>
+For the class for Web programing I
+</address>
 </body>
 
 </html>
