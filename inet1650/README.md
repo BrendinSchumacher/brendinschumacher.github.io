@@ -1,1 +1,0 @@
-# brendinschumacher.github.io
