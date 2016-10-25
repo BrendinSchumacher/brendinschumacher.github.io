@@ -1,0 +1,23 @@
+p { background-color: #C2F670;
+	width: 200px;
+	height: 200px;
+	}
+p.a {border-style: double;}
+p.b {overflow: scroll;}
+p.c {padding: 2em;}
+p.d {padding: 2em;
+	 border-style: solid;
+	 border-color: red;
+	 border-width: 4px;}
+p.e {border-style: solid;
+	 border-width: 4px;
+	 margin: 2em;}
+p.f {border-style: dashed;
+	 border-width: 4px;
+	 padding: 1em 1em 1em 6em;
+	 margin: 1em 6em 1em 6em;}
+p.g {border-style: solid;
+	 border-color: green;
+	 border-width: 2px;
+	 padding: 1em 50px 1em 50px;
+	 overflow: scroll;}
