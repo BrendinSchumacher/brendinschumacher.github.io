@@ -14,7 +14,7 @@
 		function getNewDeck() {
 			var deck = [];
 			var suits = ['clubs','spades','diamonds','hearts'];
-			var cards = ['ace','2','3','4','5','6','7','8','9','10','jack','queen','king']
+			var cards = ['ace','2','3','4','5','6','7','8','9','10','jack','queen','king'];
 			{suit: 'clubs', face: 'ace', value:1}
 			{suit: 'clubs', face: '2', value:2}
 			{suit: 'clubs', face: '3', value:3}
@@ -74,7 +74,7 @@
 			*	{suit: 'hearts', face: 2, value: 2}
 			**/
 			return deck;
-		}
+		};
 			function shuffle(deck) {
 				var newDeck = [];
 				for (var i = 0; i < deck.length; i++)    
@@ -84,7 +84,7 @@
 					cards.push(cards);
 					document.getElementById(deck).innerHTML = cards;}
 				return newDeck;
-			}  
+			};
 			/**
 			* Write the code to shuffle the deck.
 			* You'll use push and splice methods here
@@ -93,8 +93,7 @@
 		}
 		
 		function printDeck(deck) {
-			var cards = '<img src ="2_of_clubs.png">';
-			
+		var newDeck
 			/**
 			* Create a string that represents all the cards in the deck.
 			* This will be a string of "<img ...><img ...>" tags that represent the cards in the deck
