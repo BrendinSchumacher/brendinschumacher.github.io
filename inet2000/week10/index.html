@@ -7,66 +7,35 @@
 		#cards img, #shuffled img { height: 50px; float: left; margin: 5px; }
 	</style>
 	     
-	<script src="//code.jquery.com/jquery-3.1.1.slim.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.js"></script>
 	
-	<script>
+<script>
 		
 		function getNewDeck() {
 			var deck = [];
 			var suits = ['clubs','spades','diamonds','hearts'];
-			var cards = ['ace','2','3','4','5','6','7','8','9','10','jack','queen','king'];
-			{suit: 'clubs', face: 'ace', value:1}
-			{suit: 'clubs', face: '2', value:2}
-			{suit: 'clubs', face: '3', value:3}
-			{suit: 'clubs', face: '4', value:4}
-			{suit: 'clubs', face: '5', value:5}
-			{suit: 'clubs', face: '6', value:6}
-			{suit: 'clubs', face: '7', value:7}
-			{suit: 'clubs', face: '8', value:8}
-			{suit: 'clubs', face: '9', value:9}
-			{suit: 'clubs', face: '10', value:10}
-			{suit: 'clubs', face: 'jack', value:11}
-			{suit: 'clubs', face: 'queen', value:12}
-			{suit: 'clubs', face: 'king', value:13}
-			{suit: 'spades', face: 'ace', value:1}
-			{suit: 'spades', face: '2', value:2}
-			{suit: 'spades', face: '3', value:3}
-			{suit: 'spades', face: '4', value:4}
-			{suit: 'spades', face: '5', value:5}
-			{suit: 'spades', face: '6', value:6}
-			{suit: 'spades', face: '7', value:7}
-			{suit: 'spades', face: '8', value:8}
-			{suit: 'spades', face: '9', value:9}
-			{suit: 'spades', face: '10', value:10}
-			{suit: 'spades', face: 'jack', value:11}
-			{suit: 'spades', face: 'queen', value:12}
-			{suit: 'spades', face: 'king', value:13}
-			{suit: 'diamonds', face: 'ace', value:1}
-			{suit: 'diamonds', face: '2', value:2}
-			{suit: 'diamonds', face: '3', value:3}
-			{suit: 'diamonds', face: '4', value:4}
-			{suit: 'diamonds', face: '5', value:5}
-			{suit: 'diamonds', face: '6', value:6}
-			{suit: 'diamonds', face: '7', value:7}
-			{suit: 'diamonds', face: '8', value:8}
-			{suit: 'diamonds', face: '9', value:9}
-			{suit: 'diamonds', face: '10', value:10}
-			{suit: 'diamonds', face: 'jack', value:11}
-			{suit: 'diamonds', face: 'queen', value:12}
-			{suit: 'diamonds', face: 'king', value:13}
-			{suit: 'hearts', face: 'ace', value:1}
-			{suit: 'hearts', face: '2', value:2}
-			{suit: 'hearts', face: '3', value:3}
-			{suit: 'hearts', face: '4', value:4}
-			{suit: 'hearts', face: '5', value:5}
-			{suit: 'hearts', face: '6', value:6}
-			{suit: 'hearts', face: '7', value:7}
-			{suit: 'hearts', face: '8', value:8}
-			{suit: 'hearts', face: '9', value:9}
-			{suit: 'hearts', face: '10', value:10}
-			{suit: 'hearts', face: 'jack', value:11}
-			{suit: 'hearts', face: 'queen', value:12}
-			{suit: 'hearts', face: 'king', value:13}
+			
+			for (i=0; i<suits.length; i++) {
+				for (j=1; j<14; j++) {
+					if (j == 1) {
+						// push ace of current suite on to deck
+						deck.push({suit: suits[i], face: 'ace', value: j});
+					}
+					else if (j == 11) {
+						deck.push({suit: suits[i], face: 'jack', value: j});
+					}
+					else if (j == 12) {
+						deck.push({suit: suits[i], face: 'queen', value: j});
+					}
+					else if (j == 13) {
+						deck.push({suit: suits[i], face: 'king', value: j});
+					}
+					else {
+						deck.push({suit: suits[i], face: j, value: j});
+						// push a face value card of the current suit
+					}
+				}
+			}
 			/**
 			* build an array of card objects. A single card object should look like the following:
 			*	{suit: 'clubs', face: 'jack', value: 11}
@@ -74,30 +43,37 @@
 			*	{suit: 'hearts', face: 2, value: 2}
 			**/
 			return deck;
-		};
-			function shuffle(deck) {
-				var newDeck = [];
-				for (var i = 0; i < deck.length; i++)    
-					newDeck[i] = deck.splice(Math.floor(Math.random() * deck.length), 1)[0];
-					
-				function game() {
-					cards.push(cards);
-					document.getElementById(deck).innerHTML = cards;}
-				return newDeck;
-			};
+		}
+		
+		function shuffleDeck(deck) {
+			var newDeck = [];
 			/**
 			* Write the code to shuffle the deck.
 			* You'll use push and splice methods here
 			**/
+				for (var i = 0; i < deck.length; i++) {    
+					var random = Math.floor(Math.random() * (i + 1));  
+					newDeck[i] = newDeck[random];
+					newDeck[random] = deck[i];
+				}			
 			return newDeck;
 		}
 		
 		function printDeck(deck) {
-		var newDeck
+		var cards = '';
 			/**
 			* Create a string that represents all the cards in the deck.
 			* This will be a string of "<img ...><img ...>" tags that represent the cards in the deck
 			**/
+			for (i=0; i<52; i++) {
+				var card = '<img src="cards/' + deck[i].face + '_of_' + deck[i].suit + '.png' + '">';
+				cards = cards + card;
+				
+				if ((i + 1)%13== 0) {
+					cards = cards + '<br clear="all">'
+				}
+			}
+			cards = cards + '<br clear="all">'
 			return cards;
 		}
 		
@@ -121,5 +97,8 @@
 	<div id="shuffled">
 	</div>
 
+
 </body>
 </html>
+
+
