@@ -15,22 +15,58 @@
 		#player img { width: 70px; }
 	</style>
 	     
-	<script src="//code.jquery.com/jquery-3.1.1.slim.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.js"></script>
 	
 	<script>
 	
 		var deck, dealerCards, playerCards;
 		
 		function getNewDeck() {
-			// code from last week
+					var deck = [];
+			var suits = ['clubs','spades','diamonds','hearts'];
+			
+			for (i=0; i<suits.length; i++) {
+				for (j=1; j<14; j++) {
+					if (j == 1) {
+						// push ace of current suite on to deck
+						deck.push({suit: suits[i], face: 'ace', value: j});
+					}
+					else if (j == 11) {
+						deck.push({suit: suits[i], face: 'jack', value: j});
+					}
+					else if (j == 12) {
+						deck.push({suit: suits[i], face: 'queen', value: j});
+					}
+					else if (j == 13) {
+						deck.push({suit: suits[i], face: 'king', value: j});
+					}
+					else {
+						deck.push({suit: suits[i], face: j, value: j});
+						// push a face value card of the current suit
+					}
+				}
+			}
+			return deck;
 		}
+			// code from last week
 		
 		function shuffleDeck(deck) {
 			// code from last week
+			var newDeck = [];
+				for player  (var i = 0; i < deck.length; i++) {    
+					var random = Math.floor(Math.random() * (i + 1));  
+					newDeck[i] = newDeck[random];
+					newDeck[random] = deck[i];
+				}			
+			return newDeck;
 		}
 		
 		function printCards(theCards,location) {
-			var cards = '';
+			var playerCards = '';
+			for (i=0; i<1 ; i++) {
+				var card = '<img src="cards/' + deck[i].face + '_of_' + deck[i].suit + '.png' + '">';
+				cards = playerCards + card;
+			}
 			
 			// add code here that builds a string of images that represent the cards
 			
