@@ -29,7 +29,7 @@
 				for (j=1; j<14; j++) {
 					if (j == 1) {
 						// push ace of current suite on to deck
-						deck.push({suit: suits[i], face: 'ace', value: j});
+						deck.push({suit: suits[i], face: 'ace', value: 11});
 					}
 					else if (j == 11) {
 						deck.push({suit: suits[i], face: 'jack', value: j});
@@ -53,7 +53,7 @@
 		function shuffleDeck(deck) {
 			// code from last week
 			var newDeck = [];
-				for player  (var i = 0; i < deck.length; i++) {    
+				for (var i = 0; i < deck.length; i++) {    
 					var random = Math.floor(Math.random() * (i + 1));  
 					newDeck[i] = newDeck[random];
 					newDeck[random] = deck[i];
@@ -63,9 +63,14 @@
 		
 		function printCards(theCards,location) {
 			var playerCards = '';
-			for (i=0; i<1 ; i++) {
+			for (i=0; i<1; i++) {
 				var card = '<img src="cards/' + deck[i].face + '_of_' + deck[i].suit + '.png' + '">';
 				cards = playerCards + card;
+			}
+			var dealerCards = '';
+			for (i=0; i<1; i++) {
+				var card = '<img src="cards/' + deck[i].face + '_of_' + deck[i].suit + '.png' + '">';
+				cards  = dealerCards + card;
 			}
 			
 			// add code here that builds a string of images that represent the cards
@@ -82,6 +87,7 @@
 		}
 		
 		function countCards(theHand) {
+			var	playerCards = []
 			// find the point total of the hand.
 			// aces are counted as 11 for this week.
 		}
