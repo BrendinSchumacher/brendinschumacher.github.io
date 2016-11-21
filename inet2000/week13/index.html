@@ -1,0 +1,42 @@
+Basic page with canvas and JavaScript code
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+    <style>
+   	 #myCanvas { border: 1px solid #00f; }
+    </style>
+</head>
+<body>
+    
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    
+    <script>
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d"); 
+		
+			ctx.beginPath();
+			ctx.moveTo(75,50);
+			ctx.lineTo(50,175);
+			ctx.lineTo(185,15);
+			ctx.fill();
+			
+			if (i = 1) {
+				ctx.beginPath();
+				ctx.moveTo(175,150);
+				ctx.lineTo(100,175);
+				ctx.lineTo(200,325);
+				ctx.fill();
+			}
+				if (i = 2)
+					ctx.beginPath();
+					ctx.moveTo(275,250);
+					ctx.lineTo(300,275);
+					ctx.lineTo(300,225);
+					ctx.lineTo(300,100);
+					ctx.fill();
+   	 // code to draw on canvas
+    </script
+</body>
+</html>
